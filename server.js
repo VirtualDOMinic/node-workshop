@@ -1,12 +1,9 @@
 const http = require('http');
-
 const server = http.createServer(handler);
-
 const port = 1337;
-
 const fs = require("fs");
-
 const path = require("path"); // Dom and Martin decided this is better for getting file ext
+const querystring = require("querystring");
 
 server.listen(port, () => {
     console.log(`Server is live on port ${port}`)
@@ -44,6 +41,22 @@ function handler(request, response){
         response.writeHead(200, {"Content-Type": "text/html"})
         response.write("<h1>Wooo! Go NodeGirls!</h1>")
         response.end();
+    } else if(endpoint == "/create-post"){
+        console.log("create post");
+        // 300 didn't work, 302 did!
+        response.writeHead(302, {"Location": "/index.html"});
+        let allTheData = "";
+
+        request.on("data", chunkOfData => {
+            allTheData += chunkOfData;
+        });
+
+        request.on("end", () => {
+            const convertedData = querystring.parse(allTheData)
+            console.log(convertedData);
+            response.end();
+        })
+
     } else {
         // the below would cause issues if we've got several periods in the name. Gonna use path.extname instead
         // const fileExt = file.split(".")[1]; 
@@ -77,5 +90,7 @@ function handler(request, response){
 
         // response.end(endpoint);
     }
+
+
 
 }
