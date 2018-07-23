@@ -1,0 +1,22 @@
+{
+  "name": "workshop-martin-dom",
+  "version": "1.0.0",
+  "description": "Dom and Martin test their hubris",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VirtualDOMinic/node-workshop-martin-dom.git"
+  },
+  "keywords": [
+    "hubris"
+  ],
+  "author": "Dominic Coelho, Martin Gaston",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VirtualDOMinic/node-workshop-martin-dom/issues"
+  },
+  "homepage": "https://github.com/VirtualDOMinic/node-workshop-martin-dom#readme"
+}
