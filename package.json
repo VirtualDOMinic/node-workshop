@@ -4,7 +4,8 @@
   "description": "Dom and Martin test their hubris",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon script.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/VirtualDOMinic/node-workshop-martin-dom/issues"
   },
-  "homepage": "https://github.com/VirtualDOMinic/node-workshop-martin-dom#readme"
+  "homepage": "https://github.com/VirtualDOMinic/node-workshop-martin-dom#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.3"
+  }
 }
